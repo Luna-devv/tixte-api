@@ -1,5 +1,4 @@
 console.clear();
-
 const chalk = require(`chalk`);
 const moment = require(`moment`);
 
@@ -87,7 +86,8 @@ readline.question(`What's your tixte account token?\n`, token => {
                     Id:        ${chalk.white(JSON.stringify(res.data.data.id).replace(/(?:")/g, ''))}
                     Avatar:    ${chalk.white(JSON.stringify(res.data.data.avatar).replace(/(?:")/g, ''))}
                 ${chalk.hex('#2B3238')("—————————————————————————————————————")}
-                    Domains:   ${chalk.white(JSON.stringify(res2.data.data.total).replace(/(?:")/g, ''))}`);
+                    Domains:   ${chalk.white(JSON.stringify(res2.data.data.total).replace(/(?:")/g, ''))}
+                `);
 
                 res2.data.data.domains.forEach(function (d) {
                     console.log(`                    Name:      ${chalk.white(JSON.stringify(d.name).replace(/(?:")/g, ''))} | Uploads: ${chalk.white(JSON.stringify(d.uploads))}`);
@@ -106,5 +106,6 @@ readline.question(`What's your tixte account token?\n`, token => {
             });
         });
     });
+
     readline.close();
 });
